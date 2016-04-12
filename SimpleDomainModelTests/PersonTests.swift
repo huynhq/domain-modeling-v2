@@ -37,7 +37,7 @@ class PersonTests: XCTestCase {
   
 }
 
-class FamilyTests : XCTestCase {
+ class FamilyTests : XCTestCase {
   
   func testFamily() {
     let ted = Person(firstName: "Ted", lastName: "Neward", age: 45)
