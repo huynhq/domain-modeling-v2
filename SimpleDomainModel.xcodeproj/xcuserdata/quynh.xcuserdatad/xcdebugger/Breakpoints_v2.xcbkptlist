@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleDomainModel/main.swift"
-            timestampString = "482047640.440292"
+            timestampString = "482787733.757183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "init(firstName:lastName:age:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleDomainModel/main.swift"
-            timestampString = "482047237.120001"
+            timestampString = "482787733.757183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "Person"
             landmarkType = "3">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleDomainModel/main.swift"
-            timestampString = "482046935.850491"
+            timestampString = "482787733.757183"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "Person"
             landmarkType = "3">
             <Locations>

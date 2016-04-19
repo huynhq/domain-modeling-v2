@@ -18,13 +18,43 @@ public class TestMe {
         return "I have been tested"
     }
 }
+// V2 Stuff
+protocol CustomStringConvertible {
+    var description : String { get }
+}
+
+protocol Mathematics {
+    func +(left: Money, right: Money) -> Money
+    func -(left: Money, right: Money) -> Money
+}
+
+extension Double {
+    var usd: Money { return Money(amount: self, currency: "USD") }
+    var gbp: Money { return Money(amount: self, currency: "GBP") }
+    var eur: Money { return Money(amount: self, currency: "EUR") }
+    var yen: Money { return Money(amount: self, currency: "YEN") }
+}
 
 ////////////////////////////////////
 // Money
 //
-public struct Money {
+
+func +(left: Money, right: Money) -> Money {
+    return left.add(right)
+}
+
+func -(left: Money, right: Money) -> Money {
+    return left.subtract(right)
+}
+
+public struct Money : CustomStringConvertible, Mathematics {
     public var amount : Double
     public var currency : String
+    
+    public var description: String {
+        return currency + String(amount)
+    }
+
     // Conversion Rates
     // 1 USD = .5 GBP (2 USD = 1 GBP)
     // 1 USD = 1.5 EUR (2 USD = 3 EUR)
@@ -82,7 +112,7 @@ public struct Money {
 ////////////////////////////////////
 // Job
 //
-public class Job {
+public class Job : CustomStringConvertible {
     public enum JobType {
         case Hourly(Double)
         case Salary(Int)
@@ -90,6 +120,10 @@ public class Job {
     
     public var title : String
     public var type : JobType
+    
+    public var description: String {
+        return title + " " + String(type)
+    }
     
     public init(title : String, type : JobType) {
         self.title = title
@@ -116,7 +150,7 @@ public class Job {
 ////////////////////////////////////
 // Person
 //
-public class Person {
+public class Person : CustomStringConvertible {
     public var firstName : String = ""
     public var lastName : String = ""
     public var age : Int = 0
@@ -147,6 +181,10 @@ public class Person {
         }
     }
     
+    public var description: String {
+        return toString()
+    }
+    
     public init(firstName : String, lastName: String, age : Int) {
         self.firstName = firstName
         self.lastName = lastName
@@ -164,8 +202,16 @@ public class Person {
 ////////////////////////////////////
 // Family
 //
-public class Family {
+public class Family : CustomStringConvertible {
     private var members : [Person] = []
+    
+    public var description: String {
+        var result = ""
+        for person in members {
+            result += person.firstName + " " + person.lastName + ";"
+        }
+        return result
+    }
     
     public init(spouse1: Person, spouse2: Person) {
         if(spouse1._spouse == nil && spouse2._spouse == nil) {
